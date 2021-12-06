@@ -2,7 +2,7 @@
     text-align: center;
 
  }
- input{
+ input,select{
      border: 1px  grey solid;
      padding: 3px;
      border-radius: 3px;

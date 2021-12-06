@@ -11,7 +11,7 @@ export class ConverterComponent implements OnInit {
 amount = 1;
 from = 'CAD';
 to = 'USD';
-rates: {[key: string]: number};
+rates!: {[key: string]: number};
 
 Convert(): number{
 return this.amount * this.rates[this.to];
@@ -19,8 +19,12 @@ return this.amount * this.rates[this.to];
 
 loadRates(){
   this.service.getRates(this.from).subscribe(res => this.rates =res.rates);
-
 }
+
+getAllCurrencies(): string[]{
+  return Object.keys(this.rates);
+}
+
 
   constructor(private service: CurrencyExchangeService) {
     

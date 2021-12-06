@@ -10,6 +10,6 @@ export class CurrencyExchangeService {
 
   constructor(private http: HttpClient) { }
   getRates(base: string): Observable<ExchangeRateResponse>{
-   return this.http.get<ExchangeRateResponse>('https://api.exchangeratesapi.io/latest?base=${base}')
+   return this.http.get<ExchangeRateResponse>('https://api.exchangerate.host/latest?source=ecb&base=${base}')
   }
 }
